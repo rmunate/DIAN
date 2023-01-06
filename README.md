@@ -11,7 +11,6 @@ composer require rmunate/dian-colombia
 ## Ejemplo de Uso
 
 ```sh
-//El metodo recibe la cedula sin espacios ni caracteres especiales
 $dv = DIAN::digitoVerificacion(1016080XXX);
 ```
 

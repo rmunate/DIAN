@@ -2,7 +2,7 @@
 Obtenga el digito de verificación de cualquier cedula de acuerdo con la norma de la DIAN en Colombia.
 
 ## Instalación
-# Instalar Con Composer
+# Instalar a través Composer
 
 ```sh
 composer require rmunate/dian-colombia

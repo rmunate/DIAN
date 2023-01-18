@@ -1,5 +1,6 @@
-# DIGITO VERIFICACION DIAN COLOMBIA (Calcular Digito Verificacion NIT Dian) #
-## Obtenga el dígito de verificación de cualquier cédula de acuerdo con la norma de la DIAN en Colombia. ##
+# DIGITO VERIFICACION DIAN COLOMBIA #
+## (Calcular Digito Verificacion NIT Dian) ##
+Obtenga el dígito de verificación de cualquier cédula de acuerdo con la norma de la DIAN en Colombia. 
 
 [![N|Solid](https://i.ibb.co/ZLzQTpm/Firma-Git-Hub.png)](#)
 

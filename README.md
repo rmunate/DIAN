@@ -7,13 +7,13 @@ Obtenga el dígito de verificación de cualquier cédula de acuerdo con la norma
 ## Instalación
 # Instalar a través de Composer
 
-```sh
-composer require rmunate/dian-colombia
+```console
+composer require rmunate/dian-colombia 1.0.x-dev
 ```
 
 ## Ejemplo de Uso
 
-```sh
+```php
 #Este metodo solo recibe enteros
 $digitoVerificacion = DIAN::digitoVerificacion(1016080XXX);
 ```

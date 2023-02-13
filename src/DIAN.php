@@ -9,14 +9,16 @@ namespace Rmunate\DianColombia;
  * raulmauriciounate@gmail.com
  */
 
-class DIAN {
+class DIAN
+{
 
-	/* Tipo de Codificacion */
-	public static function digitoVerificacion(int $cedula){
+    /* Tipo de Codificacion */
+    public static function digitoVerificacion(int $cedula)
+    {
 
         /* Convertir a Entero */
         $nit = intval($cedula);
-        
+
         /* Arreglo para iteracion */
         $arr = array(
             1 => 3,
@@ -33,31 +35,31 @@ class DIAN {
             6 => 23,
             9 => 41,
             12 => 53,
-            15 => 71
+            15 => 71,
         );
         $x = 0;
         $y = 0;
         $z = strlen($nit);
         $dv = '';
-        
+
         /* Iteraciones */
-        for ($i=0; $i<$z; $i++) {
+        for ($i = 0; $i < $z; $i++) {
             $y = substr($nit, $i, 1);
-            $x += ($y * $arr[$z-$i]);
+            $x += ($y * $arr[$z - $i]);
         }
-        
+
         /* Residuo */
-        $y = $x%11;
-        
+        $y = $x % 11;
+
         /* Retorno de Digito de Verificacion Dian */
         if ($y > 1) {
-            $dv = 11-$y;
+            $dv = 11 - $y;
             return $dv;
         } else {
             $dv = $y;
             return $dv;
         }
-        
-	}
+
+    }
 
 }

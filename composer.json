@@ -1,6 +1,6 @@
 {
     "name": "rmunate/dian-colombia",
-    "description": "Obtenga el digito de verificación de cualquier cedula de acuerdo con la norma de la DIAN en Colombia.",
+    "description": "Obtenga el Digito de verificación de cualquier cedula de acuerdo con la norma de la DIAN en Colombia.",
     "keywords": [
         "DIAN",
         "digito",

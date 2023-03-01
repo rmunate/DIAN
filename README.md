@@ -15,7 +15,7 @@ Ingrese el numero de cedula como Integer.
 
 | METODO | DESCRIPCIÓN |
 | ------ | ------ |
-| `DIAN::digitoVerificacion(1016080XXX)` | Retorna ewl digito de verificación de acuerdo a la norma de la DIAN en Colombia. |
+| `DIAN::digitoVerificacion(1016080XXX)` | Retorna el dígito de verificación de la cedula de acuerdo a la norma vigente de la DIAN en Colombia. |
 
 ```php
 #Este metodo solo recibe enteros

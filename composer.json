@@ -1,6 +1,6 @@
 {
     "name": "rmunate/dian-colombia",
-    "description": "Obtenga el Digito de verificación de cualquier cedula de acuerdo con la norma de la DIAN en Colombia.",
+    "description": "Obtenga el Digito de verificación de cualquier cedula de acuerdo con la norma de la DIAN en Colombia resolución 187620 de 2008.",
     "keywords": [
         "DIAN",
         "digito",
@@ -8,6 +8,7 @@
         "altum",
         "rmunate"
     ],
+    "homepage": "https://github.com/rmunate/DIAN",
     "type": "library",
     "license": "MIT",
     "autoload": {
@@ -18,7 +19,9 @@
     "authors": [
         {
             "name": "Raul Mauricio Uñate Castro",
-            "email": "raulmauriciounate@gmail.com"
+            "email": "raulmauriciounate@gmail.com",
+            "role": "owner",
+            "homepage": "https://github.com/rmunate"
         }
     ],
     "require": {

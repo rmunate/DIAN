@@ -5,25 +5,29 @@ namespace Rmunate\DianColombia;
 class DIAN
 {
     /**
-     * Resolucion empleada para el calculo
+     * Resolucion empleada para el calculo.
+     *
      * @const string
      */
-    const RESOLUCION = "DIAN - Resolución 187620 de 2008";
+    const RESOLUCION = 'DIAN - Resolución 187620 de 2008';
 
     /**
      * Pesos segun la resolucion de la Dian.
+     *
      * @var array
      */
-    private $pesos = array(71, 67, 59, 53, 47, 43, 41, 37, 29, 23, 19, 17, 13, 7, 3);
+    private $pesos = [71, 67, 59, 53, 47, 43, 41, 37, 29, 23, 19, 17, 13, 7, 3];
 
     /**
-     * Aloja el valor del Nit Suministrado
+     * Aloja el valor del Nit Suministrado.
+     *
      * @var [int]
      */
     private $nit;
 
     /**
-     * Constructor de la Casle
+     * Constructor de la Casle.
+     *
      * @param int $nit
      */
     public function __construct(int $nit)
@@ -33,11 +37,11 @@ class DIAN
 
     /**
      * Retorna el digito de verifiacion.
+     *
      * @return int
      */
-    public function digito() : int
+    public function digito(): int
     {
-        
         $pesos = $this->pesos;
         $suma = 0;
 
@@ -61,15 +65,16 @@ class DIAN
 
         return $dv;
     }
+
     /**
      * @param int $nit
-     * 
+     *
      * @return int
      */
-    public static function digitoVerificacion(int $nit) : int
+    public static function digitoVerificacion(int $nit): int
     {
         $calculo = new static($nit);
+
         return $calculo->digito();
     }
-
 }

@@ -20,16 +20,14 @@
         {
             "name": "Raul Mauricio Uñate Castro",
             "email": "raulmauriciounate@gmail.com",
-            "role": "owner",
-            "homepage": "https://github.com/rmunate"
+            "homepage": "https://github.com/rmunate",
+            "role": "owner"
         }
     ],
     "require": {
-        "php": ">=7.4"
+        "php": "^7.4|^8.0"
     },
-    "require-dev": {
-
-    },
+    "require-dev": {},
     "extra" : {
         "branch-alias" : {
             "dev-main": "1.0.x-dev"

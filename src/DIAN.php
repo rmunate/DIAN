@@ -74,7 +74,7 @@ class DIAN
     public static function digitoVerificacion(int $nit): int
     {
         $calculo = new self($nit);
-        
+
         return $calculo->digito();
     }
 }

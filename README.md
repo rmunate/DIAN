@@ -2,31 +2,38 @@
 
 ![Logo](https://github.com/rmunate/DIAN/assets/91748598/bc0f3516-08ab-4388-b236-2cdb27cfe40a)
 
-## Obtenga el dígito de verificación de cualquier cédula de acuerdo con la norma de la DIAN en Colombia. 
+## Tabla de Contenidos
+- [Introducción](#introducción)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Creador](#creador)
+- [Licencia](#licencia)
 
-Una forma simple, rápida y confiable de obtener el digito de verificación de cualquier NIT en Colombia, esto de acuerdo con la resolución 187620 de 2008.
+## Introducción
+Obtenga el dígito de verificación de cualquier cédula de acuerdo con la norma de la DIAN en Colombia. Una forma simple, rápida y confiable de obtener el dígito de verificación de cualquier NIT en Colombia, esto de acuerdo con la resolución 187620 de 2008.
 
-## _Instalacion_
-
+## Instalación
+Para instalar la dependencia a través de Composer, ejecuta el siguiente comando:
 ```console
 composer require rmunate/dian-colombia
 ```
-
 Asegúrate de que en el `composer.json` tengas la biblioteca en la última versión. `"rmunate/dian-colombia": "^1.0"`
 
-### Obtener el digito de verificación.
+## Uso
 ```php
-//Importar Uso De Libreria.
+// Importar Uso De Libreria.
 use Rmunate\DianColombia\DIAN;
 
-//Calcular Digito.
+// Calcular Dígito.
 $digito = DIAN::digitoVerificacion(1003618585);
+
+// Resolución en Uso
+$resolucion = DIAN::RESOLUCION;
 ```
-| METODO | DESCRIPCIÓN |
-| ------ | ------ |
-| `DIAN::digitoVerificacion(1016080XXX)` | Retorna el dígito de verificación de cualquier cédula de acuerdo a la norma vigente de la DIAN en Colombia resolución 187620 de 2008. |
 
-## Creator
-- 🇨🇴 Raúl Mauricio Uñate Castro. (raulmauriciounate@gmail.com)
+## Creador
+- 🇨🇴 Raúl Mauricio Uñate Castro
+- Correo electrónico: raulmauriciounate@gmail.com
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+## Licencia
+Este proyecto se encuentra bajo la [Licencia MIT](https://choosealicense.com/licenses/mit/).

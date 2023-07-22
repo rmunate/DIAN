@@ -9,7 +9,7 @@ class DIAN
      *
      * @const string
      */
-    const RESOLUCION = 'DIAN - Resolución 187620 de 2008';
+    public const RESOLUCION = 'DIAN - Resolución 187620 de 2008';
 
     /**
      * Pesos segun la resolucion de la Dian.
@@ -73,8 +73,8 @@ class DIAN
      */
     public static function digitoVerificacion(int $nit): int
     {
-        $calculo = new static($nit);
-
+        $calculo = new self($nit);
+        
         return $calculo->digito();
     }
 }

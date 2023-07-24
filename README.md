@@ -10,7 +10,7 @@
 - [Licencia](#licencia)
 
 ## Introducción
-Obtenga el dígito de verificación de cualquier cédula de acuerdo con la norma de la DIAN en Colombia. Una forma simple, rápida y confiable de obtener el dígito de verificación de cualquier NIT en Colombia, esto de acuerdo con la resolución 187620 de 2008.
+Obtenga el dígito de verificación de cualquier cédula de acuerdo con la norma de la DIAN en Colombia. Una forma simple, rápida y confiable de obtener el dígito de verificación de cualquier NIT en Colombia, esto de acuerdo con la resolución expedida por la DIAN.
 
 ## Instalación
 Para instalar la dependencia a través de Composer, ejecuta el siguiente comando:

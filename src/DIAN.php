@@ -2,13 +2,11 @@
 
 namespace Rmunate\DianColombia;
 
-use Rmunate\DianColombia\Traits\Pesos;
 use Rmunate\DianColombia\Bases\BaseDian;
 use Rmunate\DianColombia\Traits\Resolucion;
 
 class DIAN extends BaseDian
 {
-    use Pesos;
     use Resolucion;
 
     /**
@@ -35,27 +33,38 @@ class DIAN extends BaseDian
      */
     public function digito(): int
     {
-        $pesos = self::$PESOS;
-        $suma = 0;
-
-        // Convertir NIT a arreglo de dígitos
-        $digitos = array_map('intval', str_split($this->nit));
-
-        // Calcular la suma de multiplicaciones
+        // Convertir la cédula a un arreglo de dígitos
+        $digitos = array_map('intval', str_split($cedula));
+    
+        $sumaPares = 0;
+        $sumaImpares = 0;
+    
+        // Sumar los dígitos en posiciones pares e impares
         foreach ($digitos as $index => $digito) {
-            $suma += $digito * $pesos[$index];
+            if (($index + 1) % 2 === 0) {
+                $sumaPares += $digito;
+            } else {
+                $sumaImpares += $digito;
+            }
         }
-
-        // Calcular el residuo
-        $residuo = $suma % 11;
-
-        // Calcular el dígito de verificación
-        if ($residuo <= 1) {
-            $dv = 0;
-        } else {
-            $dv = 11 - $residuo;
+    
+        // Multiplicar la suma de los dígitos impares por 2
+        $sumaImpares *= 2;
+    
+        // Sumar la suma de los dígitos impares multiplicados por 2 con la suma de los dígitos pares
+        $sumaTotal = $sumaPares + $sumaImpares;
+    
+        // Calcular el residuo al dividir la suma total por 10
+        $residuo = $sumaTotal % 10;
+    
+        // Restar el residuo obtenido a 10 para obtener el dígito de verificación
+        $digitoVerificacion = 10 - $residuo;
+    
+        // Si el dígito de verificación es 10, se reemplaza por 0
+        if ($digitoVerificacion === 10) {
+            $digitoVerificacion = 0;
         }
-
-        return $dv;
+    
+        return $digitoVerificacion;
     }
 }

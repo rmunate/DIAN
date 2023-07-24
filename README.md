@@ -1,6 +1,6 @@
 # DIGITO VERIFICACIÓN DIAN COLOMBIA (PHP & Laravel Framework) v1.x
 
-![Logo](https://github.com/rmunate/DIAN/assets/91748598/bc0f3516-08ab-4388-b236-2cdb27cfe40a)
+![LOGO](https://github.com/rmunate/DIAN/assets/91748598/bc0f3516-08ab-4388-b236-2cdb27cfe40a)
 
 ## Tabla de Contenidos
 - [Introducción](#introducción)
@@ -26,9 +26,6 @@ use Rmunate\DianColombia\DIAN;
 
 // Calcular Dígito.
 $digito = DIAN::digitoVerificacion(1003618585);
-
-// Resolución en Uso
-$resolucion = DIAN::RESOLUCION;
 ```
 
 ## Creador

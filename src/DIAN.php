@@ -2,33 +2,26 @@
 
 namespace Rmunate\DianColombia;
 
-class DIAN
+use Rmunate\DianColombia\Traits\Pesos;
+use Rmunate\DianColombia\Bases\BaseDian;
+use Rmunate\DianColombia\Traits\Resolucion;
+
+class DIAN extends BaseDian
 {
-    /**
-     * Resolucion empleada para el calculo.
-     *
-     * @const string
-     */
-    public const RESOLUCION = 'DIAN - Resolución 187620 de 2008';
+    use Pesos;
+    use Resolucion;
 
     /**
-     * Pesos segun la resolucion de la Dian.
+     * Nit value used for the calculation.
      *
-     * @var array
-     */
-    private $pesos = [71, 67, 59, 53, 47, 43, 41, 37, 29, 23, 19, 17, 13, 7, 3];
-
-    /**
-     * Aloja el valor del Nit Suministrado.
-     *
-     * @var [int]
+     * @var int
      */
     private $nit;
 
     /**
-     * Constructor de la Casle.
+     * Constructor of the class.
      *
-     * @param int $nit
+     * @param int $nit The Nit value to be used for the calculation.
      */
     public function __construct(int $nit)
     {
@@ -36,17 +29,17 @@ class DIAN
     }
 
     /**
-     * Retorna el digito de verifiacion.
+     * Calculate the verification digit.
      *
-     * @return int
+     * @return int The calculated verification digit.
      */
     public function digito(): int
     {
-        $pesos = $this->pesos;
+        $pesos = self::$PESOS;
         $suma = 0;
 
         // Convertir NIT a arreglo de dígitos
-        $digitos = array_map('intval', str_split($nit));
+        $digitos = array_map('intval', str_split($this->nit));
 
         // Calcular la suma de multiplicaciones
         foreach ($digitos as $index => $digito) {
@@ -64,17 +57,5 @@ class DIAN
         }
 
         return $dv;
-    }
-
-    /**
-     * @param int $nit
-     *
-     * @return int
-     */
-    public static function digitoVerificacion(int $nit): int
-    {
-        $calculo = new self($nit);
-        
-        return $calculo->digito();
     }
 }

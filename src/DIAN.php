@@ -15,7 +15,7 @@ class DIAN extends BaseDian
 
     /**
      * Constructor de la clase DIAN.
-     * 
+     *
      * @param int $cedula El número de cédula para el cual se calculará el dígito de verificación.
      */
     public function __construct(int $cedula)
@@ -25,7 +25,7 @@ class DIAN extends BaseDian
 
     /**
      * Calcula el dígito de verificación para el número de cédula dado.
-     * 
+     *
      * @return int El dígito de verificación calculado.
      */
     public function digito(): int

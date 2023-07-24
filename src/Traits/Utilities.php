@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Rmunate\DianColombia\Traits;
 
@@ -12,21 +12,21 @@ trait Utilities
     public function factores()
     {
         return [
-            1 => 3,
-            4 => 17,
-            7 => 29,
+            1  => 3,
+            4  => 17,
+            7  => 29,
             10 => 43,
             13 => 59,
-            2 => 7,
-            5 => 19,
-            8 => 37,
+            2  => 7,
+            5  => 19,
+            8  => 37,
             11 => 47,
             14 => 67,
-            3 => 13,
-            6 => 23,
-            9 => 41,
+            3  => 13,
+            6  => 23,
+            9  => 41,
             12 => 53,
-            15 => 71
+            15 => 71,
         ];
     }
 
@@ -44,6 +44,7 @@ trait Utilities
      * Extrae un dígito del NIT en una posición específica.
      *
      * @param int $i Posición del dígito a extraer.
+     *
      * @return int Dígito extraído del NIT.
      */
     public function extraer($i)
@@ -55,12 +56,14 @@ trait Utilities
      * Calcula el residuo del NIT después de la suma ponderada de los dígitos.
      *
      * @param int $suma Suma ponderada de los dígitos del NIT.
+     *
      * @return int Residuo del cálculo del dígito de verificación del NIT.
      */
     public function residuo($suma)
     {
         $residuo = $suma % 11;
         $digitoVerificacion = ($residuo > 1) ? (11 - $residuo) : $residuo;
+
         return (int) $digitoVerificacion;
     }
 }

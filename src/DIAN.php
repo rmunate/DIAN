@@ -3,68 +3,48 @@
 namespace Rmunate\DianColombia;
 
 use Rmunate\DianColombia\Bases\BaseDian;
-use Rmunate\DianColombia\Traits\Resolucion;
+use Rmunate\DianColombia\Traits\Utilities;
+use Rmunate\DianColombia\Traits\Validacion;
 
 class DIAN extends BaseDian
 {
-    use Resolucion;
+    use Utilities;
+    use Validacion;
+
+    private $cedula;
 
     /**
-     * Nit value used for the calculation.
-     *
-     * @var int
+     * Constructor de la clase DIAN.
+     * 
+     * @param int $cedula El número de cédula para el cual se calculará el dígito de verificación.
      */
-    private $nit;
-
-    /**
-     * Constructor of the class.
-     *
-     * @param int $nit The Nit value to be used for the calculation.
-     */
-    public function __construct(int $nit)
+    public function __construct(int $cedula)
     {
-        $this->nit = $nit;
+        $this->cedula = $cedula;
     }
 
     /**
-     * Calculate the verification digit.
-     *
-     * @return int The calculated verification digit.
+     * Calcula el dígito de verificación para el número de cédula dado.
+     * 
+     * @return int El dígito de verificación calculado.
      */
     public function digito(): int
     {
-        // Convertir la cédula a un arreglo de dígitos
-        $digitos = array_map('intval', str_split($cedula));
-    
-        $sumaPares = 0;
-        $sumaImpares = 0;
-    
-        // Sumar los dígitos en posiciones pares e impares
-        foreach ($digitos as $index => $digito) {
-            if (($index + 1) % 2 === 0) {
-                $sumaPares += $digito;
-            } else {
-                $sumaImpares += $digito;
-            }
+        // Verificar si el número de cédula es válido antes de proceder
+        if (!$this->inputValido()) {
+            return false; // Debería ser null en lugar de false, ya que el tipo de retorno es int.
         }
-    
-        // Multiplicar la suma de los dígitos impares por 2
-        $sumaImpares *= 2;
-    
-        // Sumar la suma de los dígitos impares multiplicados por 2 con la suma de los dígitos pares
-        $sumaTotal = $sumaPares + $sumaImpares;
-    
-        // Calcular el residuo al dividir la suma total por 10
-        $residuo = $sumaTotal % 10;
-    
-        // Restar el residuo obtenido a 10 para obtener el dígito de verificación
-        $digitoVerificacion = 10 - $residuo;
-    
-        // Si el dígito de verificación es 10, se reemplaza por 0
-        if ($digitoVerificacion === 10) {
-            $digitoVerificacion = 0;
+
+        $suma = 0;
+        $factores = $this->factores();
+        $longitudNit = $this->longitud();
+
+        // Calcular la suma ponderada de cada dígito del NIT (asumiendo que NIT se refiere al número de cédula)
+        for ($i = 0; $i < $longitudNit; $i++) {
+            $digito = $this->extraer($i);
+            $suma += ($digito * $factores[$longitudNit - $i]);
         }
-    
-        return $digitoVerificacion;
+
+        return $this->residuo($suma);
     }
 }

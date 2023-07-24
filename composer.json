@@ -1,6 +1,6 @@
 {
     "name": "rmunate/dian-colombia",
-    "description": "Obtenga el Digito de verificación de cualquier cedula de acuerdo con la norma de la DIAN en Colombia resolución 187620 de 2008.",
+    "description": "Obtenga el dígito de verificación de cualquier cédula de acuerdo con la norma de la DIAN en Colombia. Una forma simple, rápida y confiable de obtener el dígito de verificación de cualquier NIT en Colombia, esto de acuerdo con la resolución expedida por la DIAN.",
     "keywords": [
         "DIAN",
         "digito",

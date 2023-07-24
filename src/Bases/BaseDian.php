@@ -3,7 +3,7 @@
 namespace Rmunate\DianColombia\Bases;
 
 abstract class BaseDian
-{   
+{
     /**
      * @param int $nit
      *
@@ -12,6 +12,7 @@ abstract class BaseDian
     public static function digitoVerificacion(int $nit): int
     {
         $calculo = new static($nit);
+
         return $calculo->digito();
     }
 }

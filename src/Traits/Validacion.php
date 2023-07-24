@@ -14,6 +14,7 @@ trait Validacion
         if (!is_numeric($this->cedula)) {
             return false;
         }
+
         return true;
     }
 }

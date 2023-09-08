@@ -1,6 +1,6 @@
 # DIGITO VERIFICACIÓN DIAN COLOMBIA (PHP & Laravel Framework) v1.x
 
-![LOGO](https://github.com/rmunate/DIAN/assets/91748598/bc0f3516-08ab-4388-b236-2cdb27cfe40a)
+![LOGO-dian-colombia](https://github.com/alejandrodiazpinilla/DIAN/assets/51100789/8f84d52f-aa2c-4042-b4e6-e31b58fd8b2a)
 
 ## Tabla de Contenidos
 - [Introducción](#introducción)

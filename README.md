@@ -1,4 +1,4 @@
-# DIGITO VERIFICACIÓN DIAN COLOMBIA (PHP & Laravel Framework) v1.x
+# DIGITO VERIFICACIÓN DIAN COLOMBIA
 
 ![LOGO-dian-colombia](https://github.com/alejandrodiazpinilla/DIAN/assets/51100789/8f84d52f-aa2c-4042-b4e6-e31b58fd8b2a)
 

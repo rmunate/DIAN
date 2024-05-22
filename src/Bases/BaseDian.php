@@ -9,7 +9,7 @@ abstract class BaseDian
      *
      * @return int
      */
-    public static function digitoVerificacion(int $nit): int
+    public static function digitoVerificacion(int $nit)
     {
         $calculo = new static($nit);
 

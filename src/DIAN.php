@@ -32,7 +32,6 @@ class DIAN extends BaseDian
     {
         // Verificar si el número de cédula es válido antes de proceder
         if (!$this->inputValido()) {
-
             // Debería ser null en lugar de false, ya que el tipo de retorno es int.
             return false;
         }
